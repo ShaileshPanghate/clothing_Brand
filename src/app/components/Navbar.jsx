@@ -61,8 +61,8 @@ export default function Navbar() {
                 <ul className="flex flex-col p-4 space-y-6 text-lg">
                     <li><a href="#" className="hover:text-blue-600">Home</a></li>
                     <li><a href="#" className="hover:text-blue-600">Shop</a></li>
-                    <li><a href="#" className="hover:text-blue-600">About</a></li>
-                    <li><a href="#" className="hover:text-blue-600">Contact</a></li>
+                    <li><a href="/about" className="hover:text-blue-600">About</a></li>
+                    <li><a href="/contact" className="hover:text-blue-600">Contact</a></li>
                 </ul>
             </div>
         </>
