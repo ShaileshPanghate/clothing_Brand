@@ -2,6 +2,8 @@ import Image from "next/image";
 import Navbar from "./components/Navbar";
 import { Header } from "./components/Header";
 import { Newcollection } from "./components/Newcollection";
+import Footer from "./components/Footer";
+import Bestsellers from "./components/Bestsellers";
 
 export default function Home() {
   return (
@@ -10,12 +12,12 @@ export default function Home() {
         <Header />
         <Navbar />
         {/* 🔹 Hero Section */}
-        <section className="relative w-full h-screen">
+        <section className="relative w-full h-screen -mt-22 z-0">
           {/* Hero Image */}
           <img
             src="/images/Hero_ex.jpg"
             alt="Hero"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover z-0"
           />
 
           {/* Optional Overlay + Centered Text */}
@@ -72,10 +74,21 @@ export default function Home() {
         </div>
 
         {/* New Collection */}
-        {/* <section >
-          <div><h2 className="flex justify-center items-center my-8 text-4xl">NEW COLLECTION</h2></div>
+        <section >
+          <div><h2 className="flex justify-center items-center mt-9 mb-3 text-4xl">NEW COLLECTION</h2></div>
           <Newcollection />
+        </section>
+
+        {/* Our Bests Sellers */}
+        {/* <section >
+          <div><h2 className="flex justify-center items-center my-9  text-4xl">OUR BEST SELLERS</h2></div>
+          <Bestsellers />
         </section> */}
+        
+
+
+        {/* Footer */}
+        <Footer />
       </main>
     </div>
   );

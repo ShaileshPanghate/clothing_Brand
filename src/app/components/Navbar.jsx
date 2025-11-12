@@ -8,7 +8,7 @@ export default function Navbar() {
     return (
         <>
             {/* 🔹 Navbar */}
-            <nav className="fixed  top-10 left-0 right-0 flex items-center justify-between bg-transparent text-white px-14 py-8 z-50">
+            <nav className="relative w-full flex items-center justify-between bg-transparent text-black z-10 px-10 py-6">
 
                 <div>
 
@@ -23,7 +23,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Logo */}
-                <h1 className="text-xl font-semibold tracking-wide cursor-pointer">MyStore</h1>
+                <h1 className="text-4xl uppercase font-bold tracking-wide cursor-pointer">MyStore</h1>
 
                 <div>
                 <button className="focus:outline-none m-2 cursor-pointer">
