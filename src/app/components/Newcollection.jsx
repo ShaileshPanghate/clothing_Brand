@@ -15,7 +15,7 @@ export const Newcollection = () => {
                         <div className="flex flex-col items-center">
                             <div className="relative overflow-hidden group  w-[300px] h-[340px] ">
                                 <Image
-                                    src="/images/Hero_ex.jpg"
+                                    src="/images/jeans-jaket.avif"
                                     alt="Product 1"
                                     fill
                                     className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
@@ -34,7 +34,7 @@ export const Newcollection = () => {
                         <div className="flex flex-col items-center">
                             <div className="relative overflow-hidden group  w-[300px] h-[340px] ">
                                 <Image
-                                    src="/images/Hero_ex.jpg"
+                                    src="/images/blue-shirt.png"
                                     alt="Product 2"
                                     fill
                                     className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
@@ -52,7 +52,7 @@ export const Newcollection = () => {
                         <div className="flex flex-col items-center">
                             <div className="relative overflow-hidden group  w-[300px] h-[340px] ">
                                 <Image
-                                    src="/images/Hero_ex.jpg"
+                                    src="/images/print-shirt.jpg"
                                     alt="Product 3"
                                     fill
                                     className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
@@ -60,7 +60,7 @@ export const Newcollection = () => {
                             </div>
 
                             <div className="text-center mt-4 space-y-1">
-                                <h3 className="text-lg font-semibold text-gray-900 uppercase">Printed Maxi Dress</h3>
+                                <h3 className="text-lg font-semibold text-gray-900 uppercase">Printed Shirt</h3>
                                 <p className="text-sm text-gray-500 uppercase">Womenswear</p>
                                 <p className="text-base font-semibold text-gray-800">₹1,799</p>
                             </div>
@@ -70,7 +70,7 @@ export const Newcollection = () => {
                         <div className="flex flex-col items-center">
                             <div className="relative overflow-hidden group  w-[300px] h-[340px] ">
                                 <Image
-                                    src="/images/Hero_ex.jpg"
+                                    src="/images/bagg.jpg"
                                     alt="Product 4"
                                     fill
                                     className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
@@ -88,10 +88,10 @@ export const Newcollection = () => {
                     {/* RIGHT (1 large image) */}
                     <div className="relative flex-1 overflow-hidden   w-[150px] h-[960px]">
                         <Image
-                            src="/images/Hero_ex.jpg"
+                            src="/images/full_img.webp"
                             alt="Main Image"
                             fill
-                            className="object-cover "
+                            className="object-cover brightness-75"
                         />
                         {/* Centered Text + Button */}
                         <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-4">
