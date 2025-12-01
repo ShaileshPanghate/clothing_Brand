@@ -7,8 +7,8 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const images = [
         // "/images/logo/logo.jpg",
-        "/images/logo/sd3.png", // second image
-        "/images/logo/sd4.png" // Third image
+        "/images/logo/1.png", // second image
+        "/images/logo/2.png" // Third image
     ];
 
     const [index, setIndex] = useState(0);
@@ -23,7 +23,7 @@ export default function Navbar() {
         <>
             {/* 🔹 Navbar */}
             <nav className="fixed top-0 left-0 w-full flex items-center justify-between
-        px-8  sm:px-2 md:px-8 border-b border-white/20  backdrop-blur-lg  bg-white/10 text-white z-20">
+        px-8  sm:px-2 md:px-8 border-b border-white/20  backdrop-blur-lg  bg-black/40 text-white z-20">
 
                 {/* Logo */}
                 <div>
@@ -35,8 +35,8 @@ export default function Navbar() {
               object-contain transition-all duration-700
               w-32 h-14        /* 📱 mobile smaller */
               sm:w-36 sm:h-14  
-              md:w-52 md:h-18  
-              lg:w-64 lg:h-32  
+              md:w-52 md:h-10  
+              lg:w-64 lg:h-20  
             "
                     />
                 </div>
