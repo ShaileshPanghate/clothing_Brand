@@ -7,7 +7,7 @@ export const DesignDetails_Head = () => {
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="uppercase flex justify-center items-center -mb-4 text-4xl  font-light tracking-[0.25em]"
+                className="uppercase  flex justify-center items-center  text-3xl md:text-4xl  font-light tracking-[0.25em]"
             >
               Design Details
             </motion.h2></div>

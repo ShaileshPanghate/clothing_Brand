@@ -39,17 +39,63 @@ export default function Home() {
             <video src="/videos/Hero_v1.mp4" autoPlay muted loop playsInline className="w-full h-auto"></video>
           </section>
 
-          {/* Banner */}
-          {/* <section className="my-10 bg-[#dac4b5]"> */}
-            {/* <img
-              src="images/banner2.jpg"
-              alt="banner"
-              className="w-full h-full object-cover"
-            /> */}
-          {/* </section> */}
+         
 
           {/* choose your fit */}
-         
+          <section className="h-130 w-[98vw] md:w-[80vw] my-4 mx-auto overflow-y-auto flex flex-col items-center">
+            <DesignDetails_Head />
+            <ScrollStackk >
+              <ScrollStackItemm bgColor="#FEE2E2">
+
+                {/* Image = left 50% */}
+                <Image
+                  src="/images/on_rocks.jpg"
+                  width={400}
+                  height={400}
+                  alt="Fashion"
+                  className="rounded-xl mx-auto"
+                />
+
+                {/* Text = right 50% */}
+                <div className="text-center space-y-1">
+                  <h2 className="text-lg font-semibold">Modern Outfit</h2>
+                  <p className="text-sm text-gray-500">Comfort & Style</p>
+                </div>
+              </ScrollStackItemm>
+              <ScrollStackItemm bgColor="#d6b0b0">
+                {/* Image = left 50% */}
+                <Image
+                  src="/images/on_rocks.jpg"
+                  width={400}
+                  height={400}
+                  alt="Fashion"
+                  className="rounded-xl mx-auto"
+                />
+
+                {/* Text = right 50% */}
+                <div className="text-center space-y-1">
+                  <h2 className="text-lg font-semibold">Modern Outfit</h2>
+                  <p className="text-sm text-gray-500">Comfort & Style</p>
+                </div>
+              </ScrollStackItemm>
+              <ScrollStackItemm bgColor="#ba8a8a">
+                {/* Image = left 50% */}
+                <Image
+                  src="/images/on_rocks.jpg"
+                  width={400}
+                  height={400}
+                  alt="Fashion"
+                  className="rounded-xl mx-auto"
+                />
+
+                {/* Text = right 50% */}
+                <div className="text-center space-y-1">
+                  <h2 className="text-lg font-semibold">Modern Outfit</h2>
+                  <p className="text-sm text-gray-500">Comfort & Style</p>
+                </div>
+              </ScrollStackItemm>
+            </ScrollStackk>
+          </section>
 
           <section className="relative h-[530px] overflow-hidden">
 

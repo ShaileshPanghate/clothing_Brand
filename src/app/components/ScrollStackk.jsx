@@ -4,15 +4,23 @@ import Lenis from 'lenis';
 
 export const ScrollStackItemm = ({ children, bgColor, itemClassName = '' }) => (
   <div
-    className={`scroll-stack-card relative w-260 h-80 border p-12 rounded-[40px] shadow-[0_0_30px_rgba(0,0,0,0.1)] box-border  origin-top will-change-transform grid grid-cols-2 items-center ${itemClassName}`.trim()}
-    style={{
-         backgroundColor: bgColor,
-      backfaceVisibility: 'hidden',
-      transformStyle: 'preserve-3d'
-    }}
-  >
-    {children}
-  </div>
+  className={`scroll-stack-card     relative     w-[80vw]  /* Mobile: full width */ 
+     */ md:w-300 /* Custom width from your code */    h-auto /* Makes height adjust on mobile */ 
+    md:h-80 border p-6 sm:p-8 md:p-12 rounded-[20px] md:rounded-[40px] 
+    shadow-[0_0_30px_rgba(0,0,0,0.1)]     box-border 
+    origin-top     will-change-transform     grid mx-auto -mt-10
+    grid-cols-1 md:grid-cols-2   /* Stack on mobile, two-column on desktop */    items-center     gap-4
+    ${itemClassName}
+  `.trim()}
+  style={{
+    backgroundColor: bgColor,
+    backfaceVisibility: "hidden",
+    transformStyle: "preserve-3d"
+  }}
+>
+  {children}
+</div>
+
 );
 
 const ScrollStackk = ({
@@ -330,7 +338,7 @@ const ScrollStackk = ({
 
   return (
     <div className={containerClassName} ref={scrollerRef} style={containerStyles}>
-      <div className="scroll-stack-inner pt-[20vh] px-20  min-h-screen ">
+      <div className="scroll-stack-inner pt-[10vh] px-0  min-h-screen ">
         {children}
         {/* Spacer so the last pin can release cleanly */}
         <div className="scroll-stack-end w-full h-px " />
