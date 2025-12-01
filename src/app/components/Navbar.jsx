@@ -1,5 +1,5 @@
 "use client";
-import { useState , useEffect} from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, Search, ShoppingCart, User } from "lucide-react";
 
 export default function Navbar() {
@@ -7,8 +7,8 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const images = [
         // "/images/logo/logo.jpg",
-        "/images/logo/Eng_logo.png", // second image
-        "/images/logo/Marathi_logo.png" // Third image
+        "/images/logo/sd3.png", // second image
+        "/images/logo/sd4.png" // Third image
     ];
 
     const [index, setIndex] = useState(0);
@@ -22,39 +22,43 @@ export default function Navbar() {
     return (
         <>
             {/* 🔹 Navbar */}
-            <nav className="relative w-full flex items-center justify-between bg-transparent text-white z-10 px-16 ">
+            <nav className="fixed top-0 left-0 w-full flex items-center justify-between
+        px-8  sm:px-2 md:px-8 border-b border-white/20  backdrop-blur-lg  bg-white/10 text-white z-20">
 
-                <div className=" ">
-                    {/* Logo */} 
+                {/* Logo */}
+                <div>
                     <img
-                        key={index} // ensures smooth transition
+                        key={index}
                         src={images[index]}
                         alt="Logo"
-                        width={200}
-                        className="w-80 h-40 object-contain transition-all duration-700 ease-in-out"
+                        className="
+              object-contain transition-all duration-700
+              w-32 h-14        /* 📱 mobile smaller */
+              sm:w-36 sm:h-14  
+              md:w-52 md:h-18  
+              lg:w-64 lg:h-32  
+            "
                     />
                 </div>
+                {/* Icons */}
+                <div className="flex gap-3 sm:gap-6 md:gap-10 lg:gap-14 items-center">
 
-
-
-                <div className="flex gap-14 ">
-
-                    {/* Search Icon */}
-                    <button className="focus:outline-none  cursor-pointer ">
-                        <Search size={28} className="hover:scale-125 hover:opacity-90 transition-all duration-500 ease-in-out cursor-pointer" />
+                    <button className="cursor-pointer">
+                        <Search size={20} className="sm:size-22 md:size-8 hover:scale-125 transition" />
                     </button>
-                    <button className="focus:outline-none cursor-pointer">
-                        <User size={28} className="hover:scale-125 hover:opacity-90 transition-all duration-300 ease-in-out cursor-pointer" />
+
+                    <button className="cursor-pointer">
+                        <User size={20} className="sm:size-22 md:size-8 hover:scale-125 transition" />
                     </button>
-                    <button className="focus:outline-none cursor-pointer animate-shake">
-                        <ShoppingCart size={28} className="hover:scale-125 hover:opacity-90 transition-all duration-300 ease-in-out cursor-pointer" />
+
+                    <button className="cursor-pointer animate-shake">
+                        <ShoppingCart size={20} className="sm:size-22 md:size-8 hover:scale-125 transition" />
                     </button>
-                    {/* Hamburger Icon */}
-                    <button onClick={() => setIsOpen(true)} className="focus:outline-none  cursor-pointer">
-                        <Menu size={28} className="hover:scale-125 hover:opacity-90 transition-all duration-300 ease-in-out cursor-pointer" />
+
+                    <button onClick={() => setIsOpen(true)} className="cursor-pointer">
+                        <Menu size={20} className="sm:size-22 md:size-8 hover:scale-125 transition" />
                     </button>
                 </div>
-
             </nav>
 
             {/* 🔹 Overlay (with blur effect) */}
@@ -67,7 +71,7 @@ export default function Navbar() {
 
             {/* 🔹 Sidebar (slides in from left) */}
             <div
-                className={`fixed top-0 right-0 h-full w-64 bg-white text-gray-800 z-50 transform transition-transform duration-300 ease-in-out shadow-lg ${isOpen ? "translate-x-0" : "translate-x-full" 
+                className={`fixed top-0 right-0 h-full w-64 bg-white text-gray-800 z-50 transform transition-transform duration-300 ease-in-out shadow-lg ${isOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
                 {/* Sidebar Header */}

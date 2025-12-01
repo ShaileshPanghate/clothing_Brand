@@ -5,17 +5,17 @@ import { useEffect, useRef, useState } from "react";
 export default function ScrollStackClient() {
   const sections = [
     {
-      img: "/images/boomber_j.jpg",
+       img: "/images/Women_t-shirt.jpg",
       title: "Premium Fabrics",
       desc: "Crafted using high-quality materials ensuring durability, comfort and style.",
     },
     {
-      img: "/images/hoodie.jpg",
+      img: "/images/Children1.jpg",
       title: "Modern Fit",
       desc: "Designed to match contemporary fashion aesthetics with a perfect fit.",
     },
     {
-      img: "/images/print-shirt.jpg",
+      img: "/images/Sh_hoodie.jpg",
       title: "Timeless Elegance",
       desc: "Classic designs that remain stylish year after year.",
     },
