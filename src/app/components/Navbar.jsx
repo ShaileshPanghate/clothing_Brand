@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Menu, X, Search, ShoppingCart, User } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
 
@@ -15,7 +16,7 @@ export default function Navbar() {
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((prev) => (prev === 0 ? 1 : 0)); // toggle image
-        }, 2000); // 2 seconds
+        }, 3000); // 3 seconds
 
         return () => clearInterval(interval);
     }, []);
@@ -27,18 +28,17 @@ export default function Navbar() {
 
                 {/* Logo */}
                 <div>
-                    <img
-                        key={index}
+                    <motion.img
+                        key={index} // IMPORTANT for animation trigger
                         src={images[index]}
                         alt="Logo"
-                        className="
-              object-contain transition-all duration-700
-              w-32 h-14        /* 📱 mobile smaller */
-              sm:w-36 sm:h-14  
-              md:w-52 md:h-10  
-              lg:w-64 lg:h-20  
-            "
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.8, ease: "easeInOut" }}
+                        className="object-contain w-32 h-14 sm:w-36 sm:h-14 md:w-52 md:h-10 lg:w-64 lg:h-20"
                     />
+
                 </div>
                 {/* Icons */}
                 <div className="flex gap-3 sm:gap-6 md:gap-10 lg:gap-14 items-center">

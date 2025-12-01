@@ -1,19 +1,43 @@
+"use client";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { Instagram, Facebook, Twitter } from "lucide-react";
 
 export default function Footer() {
+    const images = [
+        // "/images/logo/logo.jpg",
+        "/images/logo/3.png", // second image
+        "/images/logo/4.png" // Third image
+    ];
+
+    const [index, setIndex] = useState(0);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prev) => (prev === 0 ? 1 : 0)); // toggle image
+        }, 3000); // 3 seconds
+
+        return () => clearInterval(interval);
+    }, []);
   return (
-    <footer className="bg-white text-gray-800 ">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10 mt-20">
+    <footer className="bg-[#fffee7] text-gray-800 ">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-10 ">
         {/* ===== Logo + Newsletter ===== */}
         <div>
-          {/* <Image
-            src="/images/logo.png"
-            alt="Logo"
-            width={80}
-            height={80}
-            className="mb-4"
-          /> */}
+         {/* Logo */}
+                <div>
+                    <motion.img
+                        key={index} // IMPORTANT for animation trigger
+                        src={images[index]}
+                        alt="Logo"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.8, ease: "easeInOut" }}
+                        className="object-contain w-32 h-14 sm:w-36 sm:h-14 md:w-52 md:h-10 lg:w-64 lg:h-20 z-20"
+                    />
+
+                </div>
           <p className="text-sm mb-2">
             Browsing late? Treat yourself to insider access!  
             Subscribe to our newsletter for discounts, early sale alerts, and the freshest looks to elevate your style.
@@ -67,7 +91,7 @@ export default function Footer() {
 
       {/* ===== Bottom Section ===== */}
       <div className=" text-xs text-gray-600 py-4 px-6 flex flex-col md:flex-row justify-between items-center gap-3">
-        <p>© B R A N D 2025 &nbsp;&nbsp; Powered by </p>
+       
 
         {/* Payment icons (example only) */}
         {/* <div className="flex gap-3 items-center">

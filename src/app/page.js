@@ -40,13 +40,13 @@ export default function Home() {
           </section>
 
           {/* Banner */}
-          <section className="my-10 bg-[#dac4b5]">
+          {/* <section className="my-10 bg-[#dac4b5]"> */}
             {/* <img
               src="images/banner2.jpg"
               alt="banner"
               className="w-full h-full object-cover"
             /> */}
-          </section>
+          {/* </section> */}
 
           {/* choose your fit */}
          

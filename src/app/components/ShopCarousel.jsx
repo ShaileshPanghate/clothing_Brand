@@ -19,7 +19,7 @@ export default function ShopCarousel() {
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="flex justify-center items-center m-8 text-4xl  font-light tracking-[0.25em]"
+          className="flex justify-center items-center m-8 text-3xl md:text-4xl  font-light tracking-[0.25em]"
         >
           COLLECTION
         </motion.h2>
