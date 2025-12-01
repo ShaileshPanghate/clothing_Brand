@@ -1,11 +1,20 @@
+"use client"
 import React from 'react'
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-
+import { motion } from "framer-motion";
 
 export const Newcollection = () => {
     return (
         <>
+         <motion.h2
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="uppercase flex justify-center items-center m-8 text-4xl  font-light tracking-[0.25em]"
+            >
+              best sellers
+            </motion.h2>
             <div className="flex justify-center items-center h-[1000px]  ">
                 {/* Outer container */}
                 <div className="flex w-full  gap-6 mx-14 mt-0 ">

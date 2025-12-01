@@ -4,78 +4,143 @@ import { Header } from "./components/Header";
 import { Newcollection } from "./components/Newcollection";
 import Footer from "./components/Footer";
 import ShopCarousel from "./components/ShopCarousel";
-import ChooseYourFit from "./components/ChooseYourFit";
 import ScrollStack from "./components/ScrollStack";
+import HeroSlider from "./components/HeroSlider";
+import ClickSpark from "./components/ClickSpark";
+import BestSellerss from "./components/BestSellerss";
+import Silk from "./components/Silk";
+import ScrollStackk, { ScrollStackItemm } from "./components/ScrollStackk";
+import { DesignDetails_Head } from "./components/DesignDetails_Head";
+
 
 export default function Home() {
   return (
-    <div className=" ">
-      <main className="">
-        <Header />
-        <Navbar />
-        {/* 🔹 Hero Section */}
-        <section className="relative w-full h-screen -mt-22 z-0">
-          {/* Hero Image */}
-          <img
-            // src="/images/Hero_ex.jpg"
-            src="/images/on_rocks.jpg"
-            alt="Hero"
-            className="w-full h-full object-cover z-0 brightness-50"
-          />
+    <ClickSpark sparkColor='#752F2F'
+      sparkSize={12}
+      sparkRadius={18}
+      sparkCount={8}
+      duration={600}>
+      <div>
 
-          {/* Optional Overlay + Centered Text */}
-          <div className="absolute inset-0 flex flex-col items-center  text-center space-y-4 mt-106">
-            <h6 className="text-white text-lg uppercase tracking-widest">Introducing</h6>
-            <h2 className="text-3xl md:text-5xl uppercase font-medium text-white drop-shadow-lg">
-              Welcome to MyStore
-            </h2>
-            <button className="mt-4 cursor-pointer bg-black hover:bg-gray-800 text-white px-6 py-2  font-semibold transition">
-              SHOP NOW
-            </button>
-          </div>
-        </section>
+        <main className="">
+          {/* <Header /> */}
+          <Navbar />
+          {/* 🔹 Hero Section */}
+          <section className="relative w-full h-screen -mt-66 z-0">
+            <HeroSlider />
+          </section>
 
-        <section>
+          <section className="mt-40 ">
+            <ShopCarousel />
+          </section>
 
-          <ShopCarousel />
-        </section>
+          <section className="">
+            <video src="/videos/Hero_v1.mp4" autoPlay muted loop playsInline className="w-full h-auto"></video>
+          </section>
 
-        {/* Banner */}
-        <section className="my-10">
-          <img
-            src="images/banner2.jpg"
-            alt="banner"
-            className="w-full h-full object-cover"
-          />
-        </section>
+          {/* Banner */}
+          <section className="my-10 bg-[#dac4b5]">
+            <img
+              src="images/banner2.jpg"
+              alt="banner"
+              className="w-full h-full object-cover"
+            />
+          </section>
 
-        {/* choose your fit */}
-        <section>
-          <ChooseYourFit />
-        </section>
+          {/* choose your fit */}
+          <section className="h-130 w-300  mb-4 mx-auto py-0 overflow-y-auto flex flex-col items-center">
+            <DesignDetails_Head />
+            <ScrollStackk >
+              <ScrollStackItemm bgColor="#FEE2E2">
 
-        {/* ScrollStack */}
-        <section className="bg-gray-300 h-[530px] p-0 ">
-          <ScrollStack />
-        </section>
+                {/* Image = left 50% */}
+                <Image
+                  src="/images/on_rocks.jpg"
+                  width={400}
+                  height={400}
+                  alt="Fashion"
+                  className="rounded-xl mx-auto"
+                />
 
-        {/* New Collection */}
-        <section >
-          <div><h2 className="flex justify-center items-center mt-9 mb-3 text-4xl">BEST SELLERS</h2></div>
-          <Newcollection />
-        </section>
+                {/* Text = right 50% */}
+                <div className="text-center space-y-1">
+                  <h2 className="text-lg font-semibold">Modern Outfit</h2>
+                  <p className="text-sm text-gray-500">Comfort & Style</p>
+                </div>
+              </ScrollStackItemm>
+              <ScrollStackItemm bgColor="#d6b0b0">
+                {/* Image = left 50% */}
+                <Image
+                  src="/images/on_rocks.jpg"
+                  width={400}
+                  height={400}
+                  alt="Fashion"
+                  className="rounded-xl mx-auto"
+                />
 
-        {/* Our Bests Sellers */}
-        {/* <section >
+                {/* Text = right 50% */}
+                <div className="text-center space-y-1">
+                  <h2 className="text-lg font-semibold">Modern Outfit</h2>
+                  <p className="text-sm text-gray-500">Comfort & Style</p>
+                </div>
+              </ScrollStackItemm>
+              <ScrollStackItemm bgColor="#ba8a8a">
+                 {/* Image = left 50% */}
+                <Image
+                  src="/images/on_rocks.jpg"
+                  width={400}
+                  height={400}
+                  alt="Fashion"
+                  className="rounded-xl mx-auto"
+                />
+
+                {/* Text = right 50% */}
+                <div className="text-center space-y-1">
+                  <h2 className="text-lg font-semibold">Modern Outfit</h2>
+                  <p className="text-sm text-gray-500">Comfort & Style</p>
+                </div>
+              </ScrollStackItemm>
+            </ScrollStackk>
+          </section>
+
+          <section className="relative h-[530px] overflow-hidden">
+
+            {/* Background Layer */}
+            <div className="absolute inset-0 -z-10 opacity-40">
+              <Silk
+                speed={5}
+                scale={1}
+                color="#dac4b5"
+                noiseIntensity={1.5}
+                rotation={0}
+              />
+            </div>
+
+            {/* SCROLL STACK CONTENT */}
+            <ScrollStack />
+
+          </section>
+
+
+          {/* New Collection */}
+          <section className="bg-[#dac4b5]">
+            {/* <Newcollection /> */}
+            <BestSellerss />
+          </section>
+
+          {/* Our Bests Sellers */}
+          {/* <section >
           <div><h2 className="flex justify-center items-center my-9  text-4xl">OUR BEST SELLERS</h2></div>
           <Bestsellers />
         </section> */}
 
 
 
-        {/* Footer */}
-        <Footer />
-      </main>
-    </div>
+          {/* Footer */}
+          <Footer />
+        </main>
+
+      </div>
+    </ClickSpark>
   );
 }
