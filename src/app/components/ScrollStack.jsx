@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 export default function ScrollStackClient() {
   const sections = [
     {
-       img: "/images/Women_t-shirt.jpg",
+      img: "/images/Women_t-shirt.jpg",
       title: "Premium Fabrics",
       desc: "Crafted using high-quality materials ensuring durability, comfort and style.",
     },
@@ -50,7 +50,7 @@ export default function ScrollStackClient() {
   return (
     <section className="max-w-7xl mx-auto px-6">
 
-     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start h-[530px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center h-[530px]">
 
         {/* IMAGE SECTION */}
         <div className="relative">
@@ -60,7 +60,7 @@ export default function ScrollStackClient() {
                 key={i}
                 src={s.img}
                 alt={s.title}
-                className={`absolute inset-0 w-full h-[530px] object-cover transition-all duration-700 ${i === active ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${i === active ? "opacity-100 scale-100" : "opacity-0 scale-105"
                   }`}
               />
             ))}
@@ -71,7 +71,7 @@ export default function ScrollStackClient() {
         {/* TEXT SECTION */}
         <div
           ref={scrollRef}
-          className="space-y-20 h-[400px] overflow-y-scroll scroll-smooth [&::-webkit-scrollbar]:hidden"
+          className="space-y-20 h-[400px]  overflow-y-scroll scroll-smooth [&::-webkit-scrollbar]:hidden"
         >
           {sections.map((s, i) => (
             <div
@@ -79,11 +79,13 @@ export default function ScrollStackClient() {
               className={`min-h-[50vh] flex flex-col justify-center transition-opacity duration-500 ${active === i ? "opacity-100" : "opacity-50"
                 }`}
             >
-              <h3 className="text-2xl font-semibold mb-4">{s.title}</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">{s.desc}</p>
-              <button className="px-6 py-2 border border-black rounded-md hover:bg-black hover:text-white transition">
-                Learn More
-              </button>
+              <div className="hidden md:block">
+                <h3 className="text-2xl font-semibold mb-0 md:mb-4">{s.title}</h3>
+                <p className="text-gray-600 mb-0 md:mb-6 leading-relaxed">{s.desc}</p>
+                <button className="px-6 py-2 border border-black rounded-md hover:bg-black hover:text-white transition">
+                  Learn More
+                </button>
+              </div>
             </div>
           ))}
         </div>

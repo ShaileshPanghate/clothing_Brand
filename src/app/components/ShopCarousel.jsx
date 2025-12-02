@@ -12,7 +12,7 @@ import { Bestproducts } from "../data/products";
 export default function ShopCarousel() {
 
   return (
-    <section className="py-4 bg-gray-50">
+    <section className="py-4 pb-8 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
 
         <motion.h2
