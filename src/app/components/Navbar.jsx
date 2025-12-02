@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Search, ShoppingCart, User } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
 
@@ -28,17 +29,18 @@ export default function Navbar() {
 
                 {/* Logo */}
                 <div>
-                    <motion.img
-                        key={index} // IMPORTANT for animation trigger
-                        src={images[index]}
-                        alt="Logo"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.8, ease: "easeInOut" }}
-                        className="object-contain w-32 h-14 sm:w-36 sm:h-14 md:w-52 md:h-10 lg:w-64 lg:h-20"
-                    />
-
+                    <Link href="/" className="cursor-pointer">
+                        <motion.img
+                            key={index}
+                            src={images[index]}
+                            alt="Logo"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.8, ease: "easeInOut" }}
+                            className="object-contain w-32 h-14 sm:w-36 sm:h-14 md:w-52 md:h-10 lg:w-64 lg:h-20"
+                        />
+                    </Link>
                 </div>
                 {/* Icons */}
                 <div className="flex gap-3 sm:gap-6 md:gap-10 lg:gap-14 items-center">
