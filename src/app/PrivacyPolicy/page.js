@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
 
   return (
     <main className="min-h-screen bg-gray-50 text-gray-900 md:pt-20">
-      <Navbar/>
+      <Navbar />
       <div className="mx-auto max-w-4xl bg-white shadow-lg rounded-2xl overflow-hidden">
         <header className="px-6 py-8 sm:px-10 sm:py-10 bg-linear-to-r from-pink-500 via-red-500 to-yellow-400 text-white">
           <div className="flex items-center justify-between">
@@ -123,9 +123,13 @@ export default function PrivacyPolicy() {
             <address>
               <strong>{brand} Privacy Team</strong>
               <br />
-              Email: <a href="mailto:privacy@clothco.example" className="text-pink-600">privacy@clothco.example</a>
+              Email: <a href="swadesidrip.marketing@gmail.com" className="text-pink-600">swadesidrip.marketing@gmail.com</a>
               <br />
-              Address: 
+              Address: Address:- PLOT NO 389 AZAMSHAH LAYOUT GANESH NAGAR HANUMAN
+              NAGAR NAGPUR
+              Nagpur
+              27-440024
+              India
             </address>
 
             <div className="mt-8 border-t pt-6">

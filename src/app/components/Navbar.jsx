@@ -90,7 +90,7 @@ export default function Navbar() {
                     <li><a href="#" className="hover:text-blue-600">Shop</a></li>
                     <li><a href="/about" className="hover:text-blue-600">About</a></li>
                     <li><a href="/contact" className="hover:text-blue-600">Contact</a></li>
-                    <li><a href="/PrivacyPolicy" className="hover:text-blue-600">PrivacyPolicy</a></li>
+                    <li><a href="/PrivacyPolicy" className="hover:text-blue-600">Privacy Policy</a></li>
                 </ul>
             </div>
         </>

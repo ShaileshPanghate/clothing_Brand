@@ -44,13 +44,17 @@ export default function Contact() {
 
           <div className="space-y-4">
             <p className="text-gray-700">
-              📍 <strong>Address:</strong> Fashion Street, Mumbai, India 400001
+              📍 <strong>Address:</strong> Address:- PLOT NO 389 AZAMSHAH LAYOUT GANESH NAGAR HANUMAN
+              NAGAR NAGPUR
+              Nagpur
+              27-440024
+              India
             </p>
             <p className="text-gray-700">
-              📧 <strong>Email:</strong> support@yourbrand.com
+              📧 <strong>Email:</strong> swadesidrip.marketing@gmail.com
             </p>
             <p className="text-gray-700">
-              📞 <strong>Phone:</strong> +91 98*******
+              📞 <strong>Phone:</strong> +919595831277
             </p>
           </div>
 
