@@ -61,10 +61,10 @@ export default function Footer() {
           <h3 className="font-semibold mb-4 text-base">QUICK LINKS</h3>
           <ul className="space-y-2 text-sm">
             <li><a href="#" className="hover:underline">Exchange Portal</a></li>
-            <li><a href="#" className="hover:underline">Shipping policy</a></li>
-            <li><a href="#" className="hover:underline">Returns & exchange</a></li>
-            <li><a href="#" className="hover:underline">Privacy Policy</a></li>
-            <li><a href="#" className="hover:underline">Terms of Service</a></li>
+            <li><a href="/ShippingDelivery" className="hover:underline">Shipping & Delivery</a></li>
+            <li><a href="/CancellationRefund" className="hover:underline">Cancellation & Refund</a></li>
+            <li><a href="/PrivacyPolicy" className="hover:underline">Privacy Policy</a></li>
+            <li><a href="/Terms&Condition" className="hover:underline">Terms & Condition</a></li>
           </ul>
         </div>
 
