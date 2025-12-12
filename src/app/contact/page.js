@@ -9,6 +9,18 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+   
+    const name = e.target[0].value;
+    const email = e.target[1].value;
+    const message = e.target[2].value;
+
+    const phoneNumber = "919595831277"; // WhatsApp number (with country code)
+
+    const whatsappMessage = `Full Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+    const url = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+    window.open(url, "_blank");
+
     setSubmitted(true);
   };
 
