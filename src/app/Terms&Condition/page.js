@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 export default function TermsAndConditions() {
   return (
-    <div className="min-h-screen bg-gray-50 pt-30 px-4">
+    <div className="min-h-screen bg-gray-50 pt-30 ">
         <Navbar />
       <div className="max-w-3xl mx-auto bg-white shadow-md rounded-xl p-8">
         <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
@@ -62,12 +62,16 @@ export default function TermsAndConditions() {
 
         {/* Section 5 */}
         <h2 className="text-xl font-semibold text-gray-800 mt-6 mb-2">
-          5. Returns & Exchanges
+          5.  Returns & Refunds
         </h2>
         <p className="text-gray-600 mb-4">
-          We offer returns and exchanges for unused, unwashed products in their
-          original packaging within 7 days of delivery. Items purchased during
-          sales or special promotions may not be eligible for return.
+        
+Customers may request a return or exchange within 7 days of delivery for unused, unwashed items in original packaging.
+
+Once the returned product is received and inspected, refunds will be processed within 5–7 business days to the original payment method.
+
+Items purchased during sale or promotional offers are not eligible for return or refund unless received in damaged condition.
+
         </p>
 
         {/* Section 6 */}
@@ -104,11 +108,29 @@ export default function TermsAndConditions() {
         <h2 className="text-xl font-semibold text-gray-800 mt-6 mb-2">
           9. Updates to Terms
         </h2>
+
         <p className="text-gray-600 mb-4">
           We may update these Terms & Conditions from time to time. Continued use
           of our website implies acceptance of the updated policies.
         </p>
 
+ <h2> Contact Us</h2>
+            <p>
+              If you have questions or requests about this policy, contact us at:
+            </p>
+            <address>
+              
+              <br />
+              Email: <a href="swadesidrip.marketing@gmail.com" className="text-pink-600">swadesidrip.marketing@gmail.com</a>
+              <br />
+              Phone no. : +919595831277
+              <br />
+             Address:
+Plot No. 389, Azamshah Layout,
+Ganesh Nagar, Hanuman Nagar,
+Nagpur – 440024, Maharashtra, India
+
+            </address>
        
       </div>
       <Footer />

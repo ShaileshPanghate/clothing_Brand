@@ -43,7 +43,7 @@ export default function PrivacyPolicy() {
             <ul>
               <li>
                 <strong>Personal Information:</strong> name, email address, billing and shipping addresses, phone number,
-                and payment details (processed by a third-party payment provider).
+                and payment details are processed securely by trusted third-party payment gateways such as Razorpay. We do not store your card or UPI details.
               </li>
               <li>
                 <strong>Order Information:</strong> items purchased, sizes, colors, order history and returns.
@@ -125,19 +125,16 @@ export default function PrivacyPolicy() {
               <br />
               Email: <a href="swadesidrip.marketing@gmail.com" className="text-pink-600">swadesidrip.marketing@gmail.com</a>
               <br />
-              Address: Address:- PLOT NO 389 AZAMSHAH LAYOUT GANESH NAGAR HANUMAN
-              NAGAR NAGPUR
-              Nagpur
-              27-440024
-              India
+                Phone no. : +919595831277
+              <br />
+             Address:
+Plot No. 389, Azamshah Layout,
+Ganesh Nagar, Hanuman Nagar,
+Nagpur – 440024, Maharashtra, India
+
             </address>
 
-            <div className="mt-8 border-t pt-6">
-              <p className="text-sm text-gray-600">
-                <strong>Note:</strong> Replace the sample contact details, effective date, and any brand references
-                with your real data before publishing.
-              </p>
-            </div>
+            
           </section>
         </article>
 

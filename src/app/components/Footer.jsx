@@ -75,6 +75,12 @@ export default function Footer() {
             <li><a href="#" className="hover:underline">Blog</a></li>
             <li><a href="/about" className="hover:underline">About Us</a></li>
             <li><a href="/contact" className="hover:underline">Contact Us</a></li>
+            <li>swadesidrip.marketing@gmail.com</li>
+            <li>+919595831277</li>
+            <li> Address:
+Plot No. 389, Azamshah Layout,
+Ganesh Nagar, Hanuman Nagar,
+Nagpur – 440024, Maharashtra, India</li>
           </ul>
         </div>
 

@@ -87,7 +87,7 @@ export default function Navbar() {
                 {/* Sidebar Links */}
                 <ul className="flex flex-col p-4 space-y-6 text-lg">
                     <li><a href="#" className="hover:text-blue-600">Home</a></li>
-                    <li><a href="#" className="hover:text-blue-600">Shop</a></li>
+                    <li><a href="/products" className="hover:text-blue-600">Shop</a></li>
                     <li><a href="/about" className="hover:text-blue-600">About</a></li>
                     <li><a href="/contact" className="hover:text-blue-600">Contact</a></li>
                     <li><a href="/PrivacyPolicy" className="hover:text-blue-600">Privacy Policy</a></li>
