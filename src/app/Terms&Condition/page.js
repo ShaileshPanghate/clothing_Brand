@@ -6,17 +6,35 @@ import Footer from "../components/Footer";
 export default function TermsAndConditions() {
   return (
     <div className="min-h-screen bg-gray-50 pt-30 ">
-        <Navbar />
+      <Navbar />
       <div className="max-w-3xl mx-auto bg-white shadow-md rounded-xl p-8">
         <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
           Terms & Conditions
         </h1>
 
         <p className="text-gray-600 mb-6">
+          Last updated: 18-12-2025
           Welcome to <span className="font-semibold">Swadesi Drip</span>. By using our
           website, purchasing our products, or engaging with our services, you
           agree to the following Terms & Conditions. Please read them carefully.
         </p>
+
+        <h2 className="text-xl font-semibold text-gray-800 mt-6 mb-2">
+          Business Information
+        </h2>
+        <p className="text-gray-600 mb-4">Website Name: swadesidrip.com
+
+          Business Name: swadesidrip
+        <br />
+          Email: swadesidrip.marketing@gmail.com
+          
+          Phone:  +919595831277
+        <br />
+
+          Address:  Plot No. 389, Azamshah Layout,
+          Ganesh Nagar, Hanuman Nagar,
+          Nagpur – 440024, Maharashtra, India</p>
+
 
         {/* Section 1 */}
         <h2 className="text-xl font-semibold text-gray-800 mt-6 mb-2">
@@ -48,6 +66,10 @@ export default function TermsAndConditions() {
           stated otherwise. We accept multiple payment methods, and all
           transactions are processed securely. Swadesi Drip reserves the right to
           update pricing without prior notice.
+          All prices are listed in INR (₹) unless stated otherwise.
+
+          Payments are securely processed through Razorpay.
+          By making a payment, you authorize Razorpay to process the transaction on your behalf.
         </p>
 
         {/* Section 4 */}
@@ -58,6 +80,7 @@ export default function TermsAndConditions() {
           Once your order is placed, you will receive a confirmation email.
           Delivery timelines depend on your location and shipping method. Any
           unexpected delays will be communicated promptly.
+          
         </p>
 
         {/* Section 5 */}
@@ -65,12 +88,12 @@ export default function TermsAndConditions() {
           5.  Returns & Refunds
         </h2>
         <p className="text-gray-600 mb-4">
-        
-Customers may request a return or exchange within 7 days of delivery for unused, unwashed items in original packaging.
 
-Once the returned product is received and inspected, refunds will be processed within 5–7 business days to the original payment method.
+          Customers may request a return or exchange within 7 days of delivery for unused, unwashed items in original packaging.
 
-Items purchased during sale or promotional offers are not eligible for return or refund unless received in damaged condition.
+          Once the returned product is received and inspected, refunds will be processed within 5–7 business days to the original payment method.
+
+          Items purchased during sale or promotional offers are not eligible for return or refund unless received in damaged condition.
 
         </p>
 
@@ -114,24 +137,50 @@ Items purchased during sale or promotional offers are not eligible for return or
           of our website implies acceptance of the updated policies.
         </p>
 
- <h2> Contact Us</h2>
-            <p>
-              If you have questions or requests about this policy, contact us at:
-            </p>
-            <address>
-              
-              <br />
-              Email: <a href="swadesidrip.marketing@gmail.com" className="text-pink-600">swadesidrip.marketing@gmail.com</a>
-              <br />
-              Phone no. : +919595831277
-              <br />
-             Address:
-Plot No. 389, Azamshah Layout,
-Ganesh Nagar, Hanuman Nagar,
-Nagpur – 440024, Maharashtra, India
+        {/* Section 10 */}
+        <h2 className="text-xl font-semibold text-gray-800 mt-6 mb-2">
+          10. Third-Party Services
+        </h2>
 
-            </address>
-       
+        <p className="text-gray-600 mb-4">
+         We use third-party services such as Razorpay for payment processing. We are not responsible for their internal policies, downtime, or technical issues.
+        </p>
+
+        {/* Section 11 */}
+        <h2 className="text-xl font-semibold text-gray-800 mt-6 mb-2">
+          11. Governing Law & Jurisdiction
+        </h2>
+
+        <p className="text-gray-600 mb-4">
+         These Terms & Conditions shall be governed by the laws of India.
+         Any disputes shall be subject to the jurisdiction of courts located in Nagpur, Maharashtra. </p>
+
+        {/* Section 12 */}
+        <h2 className="text-xl font-semibold text-gray-800 mt-6 mb-2">
+          12. Changes to Terms
+        </h2>
+
+        <p className="text-gray-600 mb-4">
+        We reserve the right to modify these Terms & Conditions at any time. Updates will be posted on this page, and continued use of the website constitutes acceptance of the changes.</p>
+        
+        <h2> Contact Us</h2>
+        <p>
+          If you have questions or requests about this policy, contact us at:
+        </p>
+        <address>
+
+          <br />
+          Email: <a href="swadesidrip.marketing@gmail.com" className="text-pink-600">swadesidrip.marketing@gmail.com</a>
+          <br />
+          Phone no. : +919595831277
+          <br />
+          Address:
+          Plot No. 389, Azamshah Layout,
+          Ganesh Nagar, Hanuman Nagar,
+          Nagpur – 440024, Maharashtra, India
+
+        </address>
+
       </div>
       <Footer />
     </div>
