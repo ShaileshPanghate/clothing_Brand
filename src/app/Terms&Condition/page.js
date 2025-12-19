@@ -25,11 +25,11 @@ export default function TermsAndConditions() {
         <p className="text-gray-600 mb-4">Website Name: swadesidrip.com
 
           Business Name: swadesidrip
-        <br />
+          <br />
           Email: swadesidrip.marketing@gmail.com
-          
+
           Phone:  +919595831277
-        <br />
+          <br />
 
           Address:  Plot No. 389, Azamshah Layout,
           Ganesh Nagar, Hanuman Nagar,
@@ -55,6 +55,8 @@ export default function TermsAndConditions() {
           represented accurately. However, variations may occur due to screen
           differences or fabric characteristics. Swadesi Drip reserves the right
           to modify or discontinue products at any time.
+          <br />
+          Products sold by Swadesi Drip are intended for personal use only. We are not responsible for any misuse, allergic reactions, or damage resulting from improper handling or care of the products.
         </p>
 
         {/* Section 3 */}
@@ -70,6 +72,12 @@ export default function TermsAndConditions() {
 
           Payments are securely processed through Razorpay.
           By making a payment, you authorize Razorpay to process the transaction on your behalf.
+          <br />
+          Payment Failures & Duplicate Transactions
+          <br />
+          In case of a failed transaction where the amount is debited but the order is not confirmed, the deducted amount will be refunded to the customer’s original payment method within 5–7 business days, subject to Razorpay and bank processing timelines.
+        <br />
+        By completing a transaction, you agree to comply with Razorpay’s terms and policies in addition to Swadesi Drip’s Terms & Conditions.
         </p>
 
         {/* Section 4 */}
@@ -80,7 +88,8 @@ export default function TermsAndConditions() {
           Once your order is placed, you will receive a confirmation email.
           Delivery timelines depend on your location and shipping method. Any
           unexpected delays will be communicated promptly.
-          
+          <br />
+          Delivery timelines are estimates and may vary due to logistics, weather conditions, or other unforeseen circumstances. Swadesi Drip is not responsible for delays caused by courier partners after dispatch.
         </p>
 
         {/* Section 5 */}
@@ -95,6 +104,11 @@ export default function TermsAndConditions() {
 
           Items purchased during sale or promotional offers are not eligible for return or refund unless received in damaged condition.
 
+          <br />
+          Order Cancellation
+
+          <br />
+          Orders can be cancelled only before they are shipped. Once dispatched, cancellation requests will not be accepted. To cancel an order, customers must contact us immediately via email or phone.
         </p>
 
         {/* Section 6 */}
@@ -143,7 +157,7 @@ export default function TermsAndConditions() {
         </h2>
 
         <p className="text-gray-600 mb-4">
-         We use third-party services such as Razorpay for payment processing. We are not responsible for their internal policies, downtime, or technical issues.
+          We use third-party services such as Razorpay for payment processing. We are not responsible for their internal policies, downtime, or technical issues.
         </p>
 
         {/* Section 11 */}
@@ -152,8 +166,8 @@ export default function TermsAndConditions() {
         </h2>
 
         <p className="text-gray-600 mb-4">
-         These Terms & Conditions shall be governed by the laws of India.
-         Any disputes shall be subject to the jurisdiction of courts located in Nagpur, Maharashtra. </p>
+          These Terms & Conditions shall be governed by the laws of India.
+          Any disputes shall be subject to the jurisdiction of courts located in Nagpur, Maharashtra. </p>
 
         {/* Section 12 */}
         <h2 className="text-xl font-semibold text-gray-800 mt-6 mb-2">
@@ -161,8 +175,8 @@ export default function TermsAndConditions() {
         </h2>
 
         <p className="text-gray-600 mb-4">
-        We reserve the right to modify these Terms & Conditions at any time. Updates will be posted on this page, and continued use of the website constitutes acceptance of the changes.</p>
-        
+          We reserve the right to modify these Terms & Conditions at any time. Updates will be posted on this page, and continued use of the website constitutes acceptance of the changes.</p>
+
         <h2> Contact Us</h2>
         <p>
           If you have questions or requests about this policy, contact us at:
