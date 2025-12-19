@@ -13,7 +13,7 @@ export default function TermsAndConditions() {
         </h1>
 
         <p className="text-gray-600 mb-6">
-          Last updated: 18-12-2025
+          Last updated: 19-12-2025
           Welcome to <span className="font-semibold">Swadesi Drip</span>. By using our
           website, purchasing our products, or engaging with our services, you
           agree to the following Terms & Conditions. Please read them carefully.
