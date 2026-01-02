@@ -50,11 +50,13 @@ export default function Navbar() {
                     </button>
 
                     <button className="cursor-pointer">
-                        <User size={20} className="sm:size-22 md:size-8 hover:scale-125 transition" />
+                        <Link href="/signup">
+                            <User size={20} className="sm:size-22 md:size-8 hover:scale-125 transition" />
+                        </Link>
                     </button>
 
                     <button className="cursor-pointer animate-shake">
-                        <ShoppingCart size={20} className="sm:size-22 md:size-8 hover:scale-125 transition" />
+                        <Link href="/cart" className="cursor-pointer"> <ShoppingCart size={20} className="sm:size-22 md:size-8 hover:scale-125 transition" /></Link>
                     </button>
 
                     <button onClick={() => setIsOpen(true)} className="cursor-pointer">
