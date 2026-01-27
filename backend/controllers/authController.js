@@ -30,7 +30,6 @@ exports.register = async (req, res, next) => {
 // @access  Public
 exports.login = async (req, res, next) => {
     try {
-        console.log(req.body)
         const { email, password } = req.body;
 
         // Validate email & password

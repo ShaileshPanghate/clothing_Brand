@@ -7,6 +7,19 @@ import Link from "next/link";
 export default function Navbar() {
 
     const [isOpen, setIsOpen] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const token = document.cookie.split('; ').find(row => row.startsWith('token='));
+        setIsLoggedIn(!!token);
+    }, []);
+
+    const handleLogout = () => {
+        document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        localStorage.removeItem('user');
+        window.location.href = '/';
+    };
+
     const images = [
         // "/images/logo/logo.jpg",
         "/images/logo/1.png", // second image
@@ -46,21 +59,21 @@ export default function Navbar() {
                 <div className="flex gap-3 sm:gap-6 md:gap-10 lg:gap-14 items-center">
 
                     <button className="cursor-pointer">
-                        <Search size={20} className="sm:size-22 md:size-8 hover:scale-125 transition" />
+                        <Search size={20} className="sm:size-22 md:size-8 hover:scale-105 transition" />
                     </button>
 
                     <button className="cursor-pointer">
-                        <Link href="/signup">
-                            <User size={20} className="sm:size-22 md:size-8 hover:scale-125 transition" />
+                        <Link href={isLoggedIn ? "/profile" : "/login"}>
+                            <User size={20} className={`sm:size-22 md:size-8 hover:scale-105 transition ${isLoggedIn ? 'text-green-400' : ''}`} />
                         </Link>
                     </button>
 
-                    <button className="cursor-pointer animate-shake">
-                        <Link href="/cart" className="cursor-pointer"> <ShoppingCart size={20} className="sm:size-22 md:size-8 hover:scale-125 transition" /></Link>
+                    <button className="cursor-pointer">
+                        <Link href="/cart" className="cursor-pointer"> <ShoppingCart size={20} className="sm:size-22 md:size-8 hover:scale-105 transition" /></Link>
                     </button>
 
                     <button onClick={() => setIsOpen(true)} className="cursor-pointer">
-                        <Menu size={20} className="sm:size-22 md:size-8 hover:scale-125 transition" />
+                        <Menu size={20} className="sm:size-22 md:size-8 hover:scale-105 transition" />
                     </button>
                 </div>
             </nav>
@@ -88,11 +101,21 @@ export default function Navbar() {
 
                 {/* Sidebar Links */}
                 <ul className="flex flex-col p-4 space-y-6 text-lg">
-                    <li><a href="#" className="hover:text-blue-600">Home</a></li>
-                    <li><a href="/products" className="hover:text-blue-600">Shop</a></li>
-                    <li><a href="/about" className="hover:text-blue-600">About</a></li>
-                    <li><a href="/contact" className="hover:text-blue-600">Contact</a></li>
-                    <li><a href="/PrivacyPolicy" className="hover:text-blue-600">Privacy Policy</a></li>
+                    <li><Link href="/" className="hover:text-blue-600">Home</Link></li>
+                    <li><Link href="/products" className="hover:text-blue-600">Shop</Link></li>
+                    {isLoggedIn ? (
+                        <>
+                            <li><Link href="/profile" className="hover:text-blue-600">My Profile</Link></li>
+                            <li><button onClick={handleLogout} className="text-left w-full hover:text-red-600 text-red-500 font-medium">Logout</button></li>
+                        </>
+                    ) : (
+                        <>
+                            <li><Link href="/login" className="hover:text-blue-600">Login</Link></li>
+                            <li><Link href="/signup" className="hover:text-blue-600">Create Account</Link></li>
+                        </>
+                    )}
+                    <li><Link href="/about" className="hover:text-blue-600">About</Link></li>
+                    <li><Link href="/PrivacyPolicy" className="hover:text-blue-600">Privacy Policy</Link></li>
                 </ul>
             </div>
         </>

@@ -36,3 +36,33 @@ exports.getUserById = async (req, res, next) => {
         next(err);
     }
 };
+
+// @desc    Update user profile
+// @route   PUT /api/users/update
+// @access  Private
+exports.updateUser = async (req, res, next) => {
+    try {
+        const fieldsToUpdate = {
+            name: req.body.name,
+            email: req.body.email,
+            phone: req.body.phone
+        };
+
+        // If address is provided, update it
+        if (req.body.address) {
+            fieldsToUpdate.addresses = [req.body.address];
+        }
+
+        const user = await User.findByIdAndUpdate(req.user.id, fieldsToUpdate, {
+            new: true,
+            runValidators: true
+        });
+
+        res.status(200).json({
+            success: true,
+            data: user
+        });
+    } catch (err) {
+        next(err);
+    }
+};

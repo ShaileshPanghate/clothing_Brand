@@ -60,7 +60,7 @@ export default function ProductDetails({ params }) {
             {product.category}
           </span>
 
-          <button className="w-full mt-8 bg-black text-white py-4 rounded-xl font-bold hover:bg-gray-800 transition-colors uppercase tracking-widest">
+          <button className="w-full mt-8 bg-black text-white py-4 rounded-xl font-bold hover:bg-gray-800 transition-colors uppercase tracking-widest cursor-pointer">
             Add to Cart
           </button>
         </div>
