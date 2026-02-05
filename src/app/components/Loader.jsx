@@ -1,18 +1,29 @@
-export default function Loader() {
+'use client';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import logo from '../../../public/images/logo/logo.png';
+
+export default function Loader({ fullScreen = false }) {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-white/80 backdrop-blur-sm z-50">
-      <div className="relative flex items-center justify-center">
-
-        {/* Outer spinner ring */}
-        <div className="w-40 h-40 border-4 border-gray-300 border-t-black rounded-full animate-spin absolute"></div>
-
-        {/* Rotating logo */}
-        <img
-          src="/images/logo/logo.png"
-          alt="Loading..."
-          className="w-28 h-28 animate-spin-slow"
+    <div className={`${fullScreen ? 'fixed inset-0 bg-white z-[9999]' : 'w-full h-full min-h-[200px]'} flex items-center justify-center`}>
+      <div className="relative">
+        {/* Outer Ring */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+          className="w-16 h-16 border-4 border-gray-100 border-t-black rounded-full"
         />
 
+        {/* Brand Text / Initial */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <motion.span
+            animate={{ opacity: [0.3, 1, 0.3], rotate: -360 }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+            className="text-xs font-bold uppercase tracking-widest text-black"
+          >
+            <Image src={logo} alt="logo" width={50} height={50} />
+          </motion.span>
+        </div>
       </div>
     </div>
   );

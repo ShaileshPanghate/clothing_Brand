@@ -2,10 +2,14 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Loader from "../components/Loader";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Shop() {
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
@@ -13,12 +17,22 @@ export default function Shop() {
 
   // Fetch API
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    setLoading(true);
+    fetch("http://localhost:5000/api/products")
       .then((res) => res.json())
       .then((data) => {
-        setProducts(data);
-        setFiltered(data);
-      });
+        if (data.success && data.data) {
+          const mapped = data.data.map(p => ({
+            ...p,
+            title: p.name,
+            image: p.images[0] || '/placeholder.jpg'
+          }));
+          setProducts(mapped);
+          setFiltered(mapped);
+        }
+      })
+      .catch(err => console.error(err))
+      .finally(() => setLoading(false));
   }, []);
 
   // Filter + Search + Sort
@@ -34,7 +48,7 @@ export default function Shop() {
 
     // Category Filter
     if (category !== "All") {
-      updated = updated.filter((p) => p.category === category);
+      updated = updated.filter((p) => p.category.toLowerCase() === category.toLowerCase());
     }
 
     // Sort
@@ -48,7 +62,7 @@ export default function Shop() {
 
   return (
     <div className=" md:pt-30  bg-gray-50 min-h-screen font-[Poppins]">
-        <Navbar />
+      <Navbar />
       <h1 className="text-3xl md:text-4xl font-semibold mb-8 text-center">
         Product Store
       </h1>
@@ -71,10 +85,10 @@ export default function Shop() {
           onChange={(e) => setCategory(e.target.value)}
         >
           <option value="All">All Categories</option>
-          <option value="men's clothing">Men's Clothing</option>
-          <option value="women's clothing">Women's Clothing</option>
-          <option value="jewelery">Jewelery</option>
-          <option value="electronics">Electronics</option>
+          <option value="Men">Men's Clothing</option>
+          <option value="Women">Women's Clothing</option>
+          <option value="Jewelry">Jewelry</option>
+          <option value="Electronics">Electronics</option>
         </select>
 
         {/* Sort */}
@@ -91,35 +105,52 @@ export default function Shop() {
       </div>
 
       {/* Products Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 px-6 pb-18 gap-6">
-        {filtered.map((item) => (
-         <a
-              href={`/products/${item.id}`}
-              key={item.id}
-              className="border p-4 rounded-lg shadow-sm hover:shadow-md transition"
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-6 pb-18 gap-8">
+          {filtered.map((item) => (
+            <motion.div
+              key={item._id}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              whileHover={{ y: -5 }}
+              className="bg-white border p-4 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group"
             >
-            <img
-              src={item.image}
-              alt={item.title}
-              className="h-40 w-full object-contain mb-4"
-            />
+              <Link href={`/products/${item._id}`}>
+                <div className="h-64 w-full overflow-hidden rounded-lg mb-4 bg-gray-50 border border-gray-100 relative">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
 
-            <h2 className="font-semibold text-lg mb-2 line-clamp-2">
-              {item.title}
-            </h2>
+                <h2 className="font-semibold text-lg mb-1 line-clamp-1 group-hover:text-black transition-colors">
+                  {item.title}
+                </h2>
 
-            <p className="text-gray-600 text-sm line-clamp-3 mb-3">
-              {item.description}
-            </p>
+                <p className="text-gray-500 text-xs mb-3 uppercase tracking-wider font-medium">
+                  {item.category}
+                </p>
 
-            <p className="font-bold text-xl mb-4">₹{item.price}</p>
+                <div className="flex items-center justify-between mt-auto">
+                  <p className="font-bold text-xl">₹{item.price}</p>
+                  <button className="bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition">
+                    Details
+                  </button>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      )}
 
-            <button className="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
-              Add to Cart
-            </button>
-          </a>
-        ))}
-      </div>
+      {!loading && filtered.length === 0 && (
+        <div className="text-center py-20">
+          <p className="text-gray-500 text-lg">No products found in this category.</p>
+        </div>
+      )}
       <Footer />
     </div>
   );

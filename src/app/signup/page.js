@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function SignupPage() {
   const [form, setForm] = useState({
@@ -10,21 +11,58 @@ export default function SignupPage() {
     password: '',
     confirmPassword: '',
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = document.cookie.split('; ').find(row => row.startsWith('token='));
+    if (token) {
+      router.push('/');
+    }
+  }, [router]);
 
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
+    setLoading(true);
+    setError('');
 
     if (form.password !== form.confirmPassword) {
-      alert('Passwords do not match');
+      setError('Passwords do not match');
+      setLoading(false);
       return;
     }
 
-    console.log('Signup Data:', form);
-    // 👉 Call signup API here
+    try {
+      const res = await fetch('http://localhost:5000/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          password: form.password
+        })
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        // Save token
+        document.cookie = `token=${data.token}; path=/; max-age=604800`;
+        localStorage.setItem('user', JSON.stringify(data.user));
+        // Redirect
+        window.location.href = '/';
+      } else {
+        setError(data.message || 'Signup failed');
+      }
+    } catch (err) {
+      setError('Something went wrong');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -34,6 +72,8 @@ export default function SignupPage() {
           Create Your Account
         </h1>
 
+        {error && <div className="bg-red-100 text-red-700 p-3 mb-4 rounded text-sm">{error}</div>}
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
@@ -41,7 +81,7 @@ export default function SignupPage() {
             placeholder="Full Name"
             required
             onChange={handleChange}
-            className="input"
+            className="input w-full border rounded px-3 py-2"
           />
 
           <input
@@ -50,7 +90,7 @@ export default function SignupPage() {
             placeholder="Email address"
             required
             onChange={handleChange}
-            className="input"
+            className="input w-full border rounded px-3 py-2"
           />
 
           <input
@@ -59,7 +99,7 @@ export default function SignupPage() {
             placeholder="Password"
             required
             onChange={handleChange}
-            className="input"
+            className="input w-full border rounded px-3 py-2"
           />
 
           <input
@@ -68,14 +108,15 @@ export default function SignupPage() {
             placeholder="Confirm Password"
             required
             onChange={handleChange}
-            className="input"
+            className="input w-full border rounded px-3 py-2"
           />
 
           <button
             type="submit"
-            className="w-full bg-black text-white py-3 rounded-md hover:bg-gray-900 transition"
+            disabled={loading}
+            className="w-full bg-black text-white py-3 rounded-md hover:bg-gray-900 transition disabled:opacity-50"
           >
-            Sign Up
+            {loading ? 'Creating Account...' : 'Sign Up'}
           </button>
         </form>
 
