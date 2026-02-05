@@ -18,7 +18,7 @@ export default function Shop() {
   // Fetch API
   useEffect(() => {
     setLoading(true);
-    fetch(`${import.meta.env.VITE_API_URL}/api/products`)
+    fetch(`${import.meta.env.NEXT_PUBLIC_API_URL}/api/products`)
       .then((res) => res.json())
       .then((data) => {
         if (data.success && data.data) {
@@ -34,6 +34,9 @@ export default function Shop() {
       .catch(err => console.error(err))
       .finally(() => setLoading(false));
   }, []);
+
+  console.log(process.env.NEXT_PUBLIC_API_URL);
+
 
   // Filter + Search + Sort
   useEffect(() => {
