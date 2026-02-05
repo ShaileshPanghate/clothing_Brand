@@ -12,7 +12,7 @@ export default function ProductDetails({ params }) {
 
   useEffect(() => {
     setLoading(true);
-   fetch(`${import.meta.env.NEXT_PUBLIC_API_URL}/products/${id}`)
+   fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {

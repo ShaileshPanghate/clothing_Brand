@@ -18,7 +18,7 @@ export default function Shop() {
   // Fetch API
   useEffect(() => {
     setLoading(true);
-    fetch(`${import.meta.env.NEXT_PUBLIC_API_URL}/products`)
+  fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`)
       .then((res) => res.json())
       .then((data) => {
         if (data.success && data.data) {
