@@ -12,7 +12,7 @@ export default function ProductDetails({ params }) {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/api/products/${id}`)
+   fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
